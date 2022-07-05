@@ -32,3 +32,5 @@ u is used for special splash attack of king
 - Barbarians need to be in contact with the building to attack.
 - Consider the stones as gold mine in real coc game and gems as coins.
 - Barbarians can't attack on stones only hero does so.
+- 💎 represents gems collected 
+- The bar represents health of the hero
