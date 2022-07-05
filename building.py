@@ -1,7 +1,4 @@
-## shree ganeshay namah
-# from game import *
 from var import *
-
 class Buildings:
     def __init__(self,pos_x,pos_y,list1,shape,ind):
         self.pos_x = pos_x

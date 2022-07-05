@@ -94,8 +94,8 @@ class Troops:
                 spd-=1
                 dis = math.inf # distance
                 dis2 = math.inf # distance
-                base[self.x][self.y] = ' '
-                content[self.x][self.y] = ' '
+                prev_x = self.x
+                prev_y = self.y
 
                 for i in every_building:
                     if i.health > 0 and (i.shape == 'C' or i.shape == 'W'):
@@ -128,6 +128,8 @@ class Troops:
                                 self.y += 1
                             elif(self.y > y_cord):
                                 self.y -= 1
+                            base[prev_x][prev_y] = ' '
+                            content[prev_x][prev_y] = ' '
                         base[self.x][self.y] = '@'
                         content[self.x][self.y] = 't'
                     elif(base[self.x][self.y] == 'A'):
@@ -142,6 +144,8 @@ class Troops:
                                 self.y += 1
                             elif(self.y > y_cord):
                                 self.y -= 1
+                            base[prev_x][prev_y] = ' '
+                            content[prev_x][prev_y] = ' '
                         base[self.x][self.y] = 'A'
                         content[self.x][self.y] = 'a'
                     elif(base[self.x][self.y] == 'B'):
@@ -157,6 +161,8 @@ class Troops:
                                     self.y += 1
                                 elif(self.y > y_cord2):
                                     self.y -= 1
+                                base[prev_x][prev_y] = ' '
+                                content[prev_x][prev_y] = ' '
                             base[self.x][self.y] = 'B'
                             content[self.x][self.y] = 'b'
                         elif dis2 == math.inf and dis != math.inf:
@@ -171,6 +177,9 @@ class Troops:
                                     self.y += 1
                                 elif(self.y > y_cord):
                                     self.y -= 1
+                                base[prev_x][prev_y] = ' '
+                                content[prev_x][prev_y] = ' '
+                            
                             base[self.x][self.y] = 'B'
                             content[self.x][self.y] = 'b'
                             

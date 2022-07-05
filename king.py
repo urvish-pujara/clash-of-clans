@@ -236,14 +236,14 @@ class King:
                     if huts[i].health <= 0:
                         huts[i].health = 0
             
-            for i in range(4):
+            for i in range(3):
                 if cannons[i].health > 0 and involve_cannon[i]==1:
                     cannons[i].health -= self.power
                     if cannons[i].health <= 0:
                         cannons[i].health = 0
             
 
-            for i in range(2):
+            for i in range(1):
                 if wizards[i].health > 0 and involve_wizard[i]==1:
                     wizards[i].health -= self.power
                     if wizards[i].health <= 0:

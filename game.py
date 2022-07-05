@@ -9,12 +9,13 @@ from colorama import Fore, Back, Style
 from numpy import random
 import os
 import os.path
+import time
 level = 1
 def gameEnd():
     result = 0
     for i in range(50):
         for j in range(50):
-            if(base[i][j]== '@' or base[i][j]== '8'):
+            if(base[i][j]== '@' or (base[i][j]== '8' and i!=0)):
                 result += 1
                 break
         if(result != 0):
@@ -244,7 +245,26 @@ while True:
         level3()
     elif(game_status==1 and level == 3):
         ##print(base)
-        print("You won the game!\n")
+        os.system('clear')
+        print("\n\n\n\n\n\n\n\n                                            ✨✨✨✨✨✨✨✨                    \n                                        You won the game!                    \n\n\n\n\n\n")
+        time.sleep(0.3)
+        os.system('clear')
+        print("\n\n\n\n\n\n\n                                        ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨                    \n\n                                        You won the game!                    \n\n\n\n\n\n")
+        time.sleep(0.3)
+        os.system('clear')
+        print("\n\n\n\n\n\n                                    ✨  ✨  ✨  ✨  ✨  ✨  ✨  ✨                     \n\n\n                                        You won the game!                    \n\n\n\n\n\n")
+        time.sleep(0.3)
+        os.system('clear')
+        print("\n\n\n\n\n                             ✨    ✨    ✨    ✨    ✨    ✨    ✨    ✨                    \n\n\n\n                                        You won the game!                    \n\n\n\n\n\n")
+        time.sleep(0.3)
+        os.system('clear')
+        print("\n\n\n\n\n\n                          ✨     ✨     ✨     ✨     ✨     ✨     ✨     ✨                    \n\n\n                                        You won the game!                    \n\n\n\n\n\n")
+        time.sleep(0.3)
+        os.system('clear')
+        print("\n\n\n\n\n\n\n                       ✨      ✨      ✨      ✨      ✨      ✨      ✨      ✨                    \n\n                                        You won the game!                    \n\n\n\n\n\n")
+        time.sleep(0.3)
+        os.system('clear')
+        print("\n\n\n\n\n\n\n\n                    ✨       ✨       ✨       ✨       ✨       ✨       ✨       ✨                    \n                                        You won the game!                    \n\n\n\n\n\n")
         break
     elif(game_status==2):
         print("You lost!\n")
@@ -355,17 +375,19 @@ while True:
                 print(Back.RESET,end='')
             elif base[i][j] == 'H':
                 if huts[content2[i][j]].health > HUT_HEALTH/2:
-                    print(Fore.GREEN + base[i][j] + Fore.RESET,end=' ')
+                    print(Fore.GREEN + '🛖' + Fore.RESET,end=' ')
                 elif huts[content2[i][j]].health > HUT_HEALTH/4:
-                    print(Fore.YELLOW + base[i][j] + Fore.RESET,end=' ')
+                    print(Fore.YELLOW + '🛖' + Fore.RESET,end=' ')
                 else:
-                    print(Fore.RED + base[i][j] + Fore.RESET,end=' ')
+                    print(Fore.RED + '🛖' + Fore.RESET,end=' ')
             
             elif base[i][j] == 'S':
                 if stones[content2[i][j]].health > 0:
                     print('🪨',end=' ')
                 else:
                     print(" ",end=' ')
+            elif base[i][j] == '.':
+                print(Fore.MAGENTA + base[i][j]+ Fore.RESET,end=' ')
             else:
                 print(base[i][j],end=' ')
         print()
